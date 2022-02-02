@@ -210,20 +210,19 @@ function gradesAvg(arr) {
 // 	}
 //]
 // -------------
-
+9
 function studentsResult(arr) {
     // write your code here
-    let x=array.map(val=>{return avg});
-  for(let i =0; i<x.length;i++)
-{
-    if (x>=50)
-    console.log("Passed");
-    else
-    console.log("Failed");
- 
-}
-
+    let result="";
     
+    let x=array.map(val=>{
+    if (arr.avg>=50)
+    result="Passed";
+    else
+    result="Failed";
+ 
+
+    });
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
