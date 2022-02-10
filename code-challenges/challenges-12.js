@@ -16,7 +16,7 @@
 
 const oddFiltration = (arr) => {
     // write your code here
-    let ext = arr.filter(odd =>  odd %2 );
+    let ext = arr.filter(odd => odd % 2);
     return ext;
 }
 
@@ -69,14 +69,40 @@ const oddFiltration = (arr) => {
 
 const cvsFiltration = (arr) => {
     // write your code here
-    let arr1=[];
-    let arr2=arr.filter(val=>{
-        if (val.yearsOfExperience>4 && val.tech=="JS")
-        {
-            arr1.push({fullname: findFullname(val.firstName,val.LastName),tech:val.tech});
+    // let arr1=[];
+    // let arr2=arr.filter(val=>{
+    //     if (val.yearsOfExperience>4 && val.tech=="JS")
+    //     {
+    //         arr1.push({fullname: findFullname(val.firstName,val.LastName),tech:val.tech});
+    //     }
+    // });
+    let delid = [];
+    arr.forEach((item, index) => {
+        if (item.yearsOfExperience > 4 && item.tech =="JS") {
+            if (item.firstName === null || item.lastName === null) {
+                if (!item.firstName) {
+                    item['fullName'] = item.lastName;
+                }
+                else {
+                    item['fullName'] = item.firstName
+                }
+            } else {
+                item['fullName'] = item.firstName + ' ' + item.lastName;
+            }
+            delete item.lastName
+            delete item.firstName
+            delete item.yearsOfExperience
+        } else {
+            delid.push(index)
         }
-    });
-}
+    })
+    delid.forEach(ind => {
+        arr.splice(ind, 1)
+    })
+    return arr;
+};
+
+
 
 // 3) ---------------------
 //
@@ -89,6 +115,11 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+    let vol = /[a,e,i,o,u]/g;
+    let myarr = arr.filter(val => {
+        return !(val.match(vol))
+    })
+    return myarr
 }
 
 // 4) ---------------------
@@ -107,6 +138,10 @@ const vowelsFiltration = (arr) => {
 
 const skillComparison = (arr1, arr2) => {
     // write your code here
+    first_employee1 = aar1.filter(val => {
+        let value = arr2.include(val)
+        return value;
+    })
 }
 
 

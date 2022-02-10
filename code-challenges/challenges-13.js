@@ -103,21 +103,24 @@ return s.substring(0, s.length-1);
 const statistics = (obj) => {
     // write your code here
 
-    let countedNames = obj.reduce(function (votes_To, name) {
-        if (name in votes_To) {
-            votes_To[name]++
+    let c = obj.reduce(function (allNames, name) {
+      if (name.votes_To in allNames) {
+        allNames[name.votes_To]++
         }
         else {
-          allNames[name] = 1
+          allNames[name.votes_To] = 1
         }
         return allNames
 
 
 
-    });
-    return countedNames;
+    },{}
+    );
+    return c;
 }
 
 
 module.exports = { objectCounter, stringReverse, statistics };
 
+// 10 t10
+// 10 p13
