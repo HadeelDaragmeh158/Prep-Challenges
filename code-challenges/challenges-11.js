@@ -18,6 +18,7 @@
 function square(arr) {
     // write your code here
     const map1 = arr.map(x => x * x);
+    return map1;
 }
 
 // 2) ------------------
@@ -56,13 +57,13 @@ function square(arr) {
 //
 
 function fullName(arr) {
-    let result = obj.map(val =>{
+    let result = arr.map(val => {
         return (`${val.firstName} ${val.lastName}`);
-      });
-     
-      return result
+    });
 
-    
+    return result
+
+
 }
 
 // 3) ---------------------
@@ -124,25 +125,23 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-    // write your code here
-    let avg= arr.map(val=>{val.gradsList});
-    let x=[],y;
-    for (let i=0;i<avg.length;i++)
-    {
-        y+=avg[i];
-        y/=avg.length;
-             x[i]=y;
-    }
-    const mapped = arr.map((element) => ({
-        element,
-        avg: x.map
-      }));
-      console.log(mapped)
-      arr.defineProperty(arr, x[i], {
-        anv: x[i]
-      })
-   
+    // write your codeccs 
+    const ob = {};
+    arr["avg"] = "";
+
+    const avg = arr.map(val => {
+        let x = 0, y = 0;
+        for (let i = 0; i < val.gradsList.length; i++) {
+            x += val.gradsList[i];
+        }
+        y = x / (val.gradsList.length);
+        val.avg = y;
+        return val;
+    })
+
+    return avg;
 }
+
 
 
 // 4) ---------------------
@@ -212,7 +211,7 @@ function gradesAvg(arr) {
 // -------------
 9
 function studentsResult(arr) {
-    // write your code here
+//write your code here
     let result="";
     
     let x=array.map(val=>{
@@ -223,6 +222,19 @@ function studentsResult(arr) {
  
 
     });
+
+    //     // write your code here
+    arr["result"] = "";
+    let x = arr.map(obj => {
+        if (obj.avg >= 50)
+            obj.result = "Passed";
+        else if (obj.avg < 50)
+            obj.result = "Failed";
+        return obj;
+    })
+    return x;
+
+
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
