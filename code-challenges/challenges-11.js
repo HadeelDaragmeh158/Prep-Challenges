@@ -209,8 +209,20 @@ function gradesAvg(arr) {
 // 	}
 //]
 // -------------
-
+9
 function studentsResult(arr) {
+//write your code here
+    let result="";
+    
+    let x=array.map(val=>{
+    if (arr.avg>=50)
+    result="Passed";
+    else
+    result="Failed";
+ 
+
+    });
+
     //     // write your code here
     arr["result"] = "";
     let x = arr.map(obj => {
@@ -221,6 +233,7 @@ function studentsResult(arr) {
         return obj;
     })
     return x;
+
 
 }
 
