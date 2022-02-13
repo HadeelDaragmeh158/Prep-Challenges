@@ -32,13 +32,13 @@ const reverseString = (string) => {
 const detectFace = (arr) => {
     //write your code here ...
     let newcontant = '^_^';
-    let newarr = [];
+    let newar = [];
     for (let i = 0; i < arr.length; i++) {
       let splitarr=arr[i].split(newcontant);
         if (splitarr.length == 2)
-            newarr.push(arr[i]);
+            newar.push(arr[i]);
     }
-    return newarr;
+    return newar;
 }
 // -------------------------------------------------------------------------------------------------------
 
