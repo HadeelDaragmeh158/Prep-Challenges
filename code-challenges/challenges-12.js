@@ -16,8 +16,10 @@
 
 const oddFiltration = (arr) => {
     // write your code here
+
     let ext = arr.filter(odd => odd % 2);
     return ext;
+
 }
 
 // 2) ---------------------
@@ -69,6 +71,7 @@ const oddFiltration = (arr) => {
 
 const cvsFiltration = (arr) => {
     // write your code here
+
     // let arr1=[];
     // let arr2=arr.filter(val=>{
     //     if (val.yearsOfExperience>4 && val.tech=="JS")
@@ -103,6 +106,7 @@ const cvsFiltration = (arr) => {
 };
 
 
+}
 
 // 3) ---------------------
 //
@@ -115,11 +119,14 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+
     let vol = /[a,e,i,o,u]/g;
     let myarr = arr.filter(val => {
         return !(val.match(vol))
     })
     return myarr
+}
+
 }
 
 // 4) ---------------------
@@ -138,6 +145,7 @@ const vowelsFiltration = (arr) => {
 
 const skillComparison = (arr1, arr2) => {
     // write your code here
+
     first_employee1 = aar1.filter(val => {
         let value = arr2.include(val)
         return value;
