@@ -17,9 +17,11 @@
 const oddFiltration = (arr) => {
     // write your code here
 
-    let ext = arr.filter(odd => odd % 2);
-    return ext;
-
+      let extarr= arr.filter(val=>{
+        return(val%2!=0)
+        
+    });
+    return helpArr ; 
 }
 
 // 2) ---------------------
@@ -72,13 +74,7 @@ const oddFiltration = (arr) => {
 const cvsFiltration = (arr) => {
     // write your code here
 
-    // let arr1=[];
-    // let arr2=arr.filter(val=>{
-    //     if (val.yearsOfExperience>4 && val.tech=="JS")
-    //     {
-    //         arr1.push({fullname: findFullname(val.firstName,val.LastName),tech:val.tech});
-    //     }
-    // });
+   
     let delid = [];
     arr.forEach((item, index) => {
         if (item.yearsOfExperience > 4 && item.tech =="JS") {
@@ -118,16 +114,16 @@ const cvsFiltration = (arr) => {
 // ------------------------
 
 const vowelsFiltration = (arr) => {
-    // write your code here
 
-    let vol = /[a,e,i,o,u]/g;
-    let myarr = arr.filter(val => {
-        return !(val.match(vol))
-    })
-    return myarr
-}
+    let regex = /[a,e,i,o,u]/gi;
+    let helpArr=[];
+        helpArr = arr.filter(item=>{
 
-}
+        return !(item.match(regex)) ; 
+
+    }); 
+    return helpArr ;
+} 
 
 // 4) ---------------------
 //
@@ -144,14 +140,20 @@ const vowelsFiltration = (arr) => {
 // ------------------------
 
 const skillComparison = (arr1, arr2) => {
-    // write your code here
 
-    first_employee1 = aar1.filter(val => {
-        let value = arr2.include(val)
-        return value;
-    })
+    let hArr1 = arr1.filter(val=>{
+
+        return(!(arr2.includes(val)));
+    });
+    let hArr2 = arr2.filter(val=>{
+
+        return(!(arr1.includes(val)));
+    });
+    
+    let ansArr=[].concat(hArr1,hArr2);
+
+    return ansArr; 
 }
-
 
 module.exports = { oddFiltration, cvsFiltration, vowelsFiltration, skillComparison };
 
